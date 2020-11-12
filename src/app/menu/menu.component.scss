@@ -1,0 +1,7 @@
+.menu {
+    display: flex;
+    &__item {
+        margin-left: 10px;
+        list-style-type: none;
+    }
+}

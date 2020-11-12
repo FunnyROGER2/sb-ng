@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+$color-dark: rgb(39, 39, 39);
+$color-light: antiquewhite;
+
+.theme {
+    padding: 40px;
+
+    &--light {
+        background-color: $color-light;
+    }
+    
+    &--dark {
+        background-color: $color-dark;
+        
+    }
+}
+
+:root {
+    --color-text: #{$color-dark};
+    .theme {
+        &--dark {
+            --color-text: #{$color-light};
+        }
+    }
+}
