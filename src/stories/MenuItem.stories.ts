@@ -5,6 +5,16 @@ import { MenuItemComponent } from '../app/menu-item/menu-item.component';
 export default {
   title: 'Example/MenuItem',
   component: MenuItemComponent,
+  decorators: [
+    (storyFunc) => {
+      const story = storyFunc();
+
+      return {
+        ...story,
+        template: `<div>${story.template}</div>`,
+      };
+    },
+  ],
 } as Meta;
 
 const Template: Story<MenuItemComponent> = function(args: MenuItemComponent) {

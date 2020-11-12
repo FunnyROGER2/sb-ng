@@ -229,7 +229,7 @@
         },
         {
             "name": "LogoComponent",
-            "id": "component-LogoComponent-d14a490a5f5c8d31e0bb663f57eab067",
+            "id": "component-LogoComponent-ce48432cbcbf2bfb4bdf775596c25288",
             "file": "src/app/logo/logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -248,7 +248,7 @@
                 {
                     "name": "name",
                     "defaultValue": "'photo'",
-                    "description": "<p>А по-русски?</p>\n",
+                    "description": "<p>Выбираем название картинки</p>\n",
                     "line": 16,
                     "type": "\"pic\" | \"photo\""
                 },
@@ -267,7 +267,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, TemplateRef, ElementRef } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  template: ` <picture>\n    <source [srcset]=' \"./assets/images/\" + name + \".webp\" ' />\n    <img [src]=' \"./assets/images/\" + name + \".\" + \".jpg\" ' [alt]=' name '  [style]=' \"width: \" + width + \"px\" ' />\n  </picture>`,\n  styleUrls: ['./logo.component.scss']\n})\nexport class LogoComponent {\n  /**\n   * А по-русски?\n   */\n  @Input()\n  name: 'pic' | 'photo' = 'photo';\n\n  /**\n   * Ширина\n   */\n  @Input()\n  width: number;\n}\n",
+            "sourceCode": "import { Component, Input, TemplateRef, ElementRef } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  template: ` <picture>\n    <source [srcset]=' \"./assets/images/\" + name + \".webp\" ' />\n    <img [src]=' \"./assets/images/\" + name + \".\" + \".jpg\" ' [alt]=' name '  [style]=' \"width: \" + width + \"px\" ' />\n  </picture>`,\n  styleUrls: ['./logo.component.scss']\n})\nexport class LogoComponent {\n  /**\n   * Выбираем название картинки\n   */\n  @Input()\n  name: 'pic' | 'photo' = 'photo';\n\n  /**\n   * Ширина\n   */\n  @Input()\n  width: number;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -279,7 +279,7 @@
         },
         {
             "name": "MenuComponent",
-            "id": "component-MenuComponent-99292e14c81a35a70edb17cd8cbe6528",
+            "id": "component-MenuComponent-0607d879431fe4be1032e369fdeed638",
             "file": "src/app/menu/menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -291,19 +291,19 @@
                 "./menu.component.scss"
             ],
             "styles": [],
-            "template": "<ul>    <li *ngFor=\"let item of items.slice(0, this.num).args\">{{item}}</li>\n  </ul>",
+            "template": "<ul class=\"menu\">    <li *ngFor=\"let item of items.slice(0, num)\" class=\"menu__item\">\n      <app-menu-item\n        name={{item.name}}\n        [active]=item.active\n        [disabled]=item.disabled\n        >\n      </app-menu-item>\n    </li>\n  </ul>",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
                     "name": "items",
-                    "line": 19
+                    "line": 26
                 },
                 {
                     "name": "num",
-                    "defaultValue": "3",
+                    "defaultValue": "2",
                     "description": "<p>Число пунктов меню</p>\n",
-                    "line": 16,
+                    "line": 23,
                     "type": "number"
                 }
             ],
@@ -315,11 +315,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MenuItemComponent } from '../menu-item/menu-item.component';\n\n@Component({\n  selector: 'app-menu',\n  template: `<ul>\n    <li *ngFor=\"let item of items.slice(0, this.num).args\">{{item}}</li>\n  </ul>`,\n  styleUrls: ['./menu.component.scss']\n})\nexport class MenuComponent {\n  /**\n   * Число пунктов меню\n   */\n  @Input()\n  num: number = 3;\n\n  @Input()\n  items;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MenuItemComponent } from '../menu-item/menu-item.component';\n\n@Component({\n  selector: 'app-menu',\n  template: `<ul class=\"menu\">\n    <li *ngFor=\"let item of items.slice(0, num)\" class=\"menu__item\">\n      <app-menu-item\n        name={{item.name}}\n        [active]=item.active\n        [disabled]=item.disabled\n        >\n      </app-menu-item>\n    </li>\n  </ul>`,\n  styleUrls: ['./menu.component.scss']\n})\nexport class MenuComponent {\n  /**\n   * Число пунктов меню\n   */\n  @Input()\n  num: number = 2;\n\n  @Input()\n  items;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
+                    "data": ".menu {\r\n    display: flex;\r\n    border: 2px solid white;\r\n    border-radius: 4px;\r\n    padding: 10px;\r\n    margin: 0;\r\n\r\n    @media screen and (max-width: 540px) {\r\n        flex-direction: column;\r\n    }\r\n\r\n    &__item {\r\n        margin-left: 10px;\r\n        list-style-type: none;\r\n\r\n        @media screen and (max-width: 540px) {\r\n            margin-left: 0;\r\n            margin-top: 10px;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./menu.component.scss"
                 }
             ],
@@ -375,7 +375,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".menu-item {\r\n    font-family: sans-serif;\r\n    color: var(--color-text);\r\n    text-decoration: none;\r\n    border-bottom: 1px dashed currentColor;\r\n\r\n    &:focus,\r\n    &:hover {\r\n        border-bottom: none;\r\n    }\r\n}",
+                    "data": ".menu-item {\r\n    font-family: sans-serif;\r\n    color: var(--color-text);\r\n    text-decoration: none;\r\n    border-bottom: 1px dashed currentColor;\r\n\r\n    &:focus,\r\n    &:hover:not(&--disabled) {\r\n        border-bottom: none;\r\n    }\r\n\r\n    &--active {\r\n        font-weight: bold;\r\n    }\r\n\r\n    &--disabled {\r\n        opacity: .5;\r\n        cursor: not-allowed\r\n    }\r\n}",
                     "styleUrl": "./menu-item.component.scss"
                 }
             ],
@@ -582,17 +582,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "items",
@@ -607,38 +607,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -698,20 +666,20 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Static",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Menu.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
                 "type": "Story<Button>",
                 "defaultValue": "function(args: Button) {\n  return {\n    component: Button,\n    moduleMetadata: {\n      declarations: [Button],\n    },\n    props: args\n  }\n}"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -735,15 +703,7 @@
                 "subtype": "variable",
                 "file": "src/stories/MenuItem.stories.ts",
                 "type": "Story<MenuItemComponent>",
-                "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args\n  }\n}"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args,\n    moduleMetadata: {\n      declarations: [MenuItemComponent],\n    },\n  }\n}"
             }
         ],
         "functions": [],
@@ -789,7 +749,7 @@
                     "subtype": "variable",
                     "file": "src/stories/MenuItem.stories.ts",
                     "type": "Story<MenuItemComponent>",
-                    "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args\n  }\n}"
+                    "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args,\n    moduleMetadata: {\n      declarations: [MenuItemComponent],\n    },\n  }\n}"
                 }
             ],
             "src/stories/Menu.stories.ts": [
@@ -808,6 +768,14 @@
                     "file": "src/stories/Menu.stories.ts",
                     "type": "[]",
                     "defaultValue": "[]"
+                },
+                {
+                    "name": "Static",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Menu.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 },
                 {
                     "name": "Template",
@@ -835,16 +803,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -853,6 +811,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -895,58 +863,6 @@
                     "file": "src/stories/Button.stories.ts",
                     "type": "Story<Button>",
                     "defaultValue": "function(args: Button) {\n  return {\n    component: Button,\n    moduleMetadata: {\n      declarations: [Button],\n    },\n    props: args\n  }\n}"
-                }
-            ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
                 }
             ],
             "src/stories/Logo.stories.ts": [
@@ -995,7 +911,7 @@
         ]
     },
     "coverage": {
-        "count": 7,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -1114,36 +1030,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/Logo.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1189,6 +1075,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "items",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Static",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1245,36 +1141,6 @@
             },
             {
                 "filePath": "src/stories/MenuItem.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

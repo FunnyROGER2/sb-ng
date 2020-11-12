@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-menu-item',
   template: `
     <a
-      href="#"
+      href="javascript:void(0);"
       [ngClass]="classes"
       >
       {{ name }}
