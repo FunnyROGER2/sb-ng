@@ -327,7 +327,7 @@
         },
         {
             "name": "MenuItemComponent",
-            "id": "component-MenuItemComponent-489474f11a5a74e31473f7296a591869",
+            "id": "component-MenuItemComponent-666b585ca855d8fe1ae5f3c45f7f5729",
             "file": "src/app/menu-item/menu-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -339,7 +339,7 @@
                 "./menu-item.component.scss"
             ],
             "styles": [],
-            "template": "<a\n  href=\"#\"\n  [ngClass]=\"classes\"\n  >\n  {{ name }}\n</a>\n",
+            "template": "<a\n  href=\"javascript:void(0);\"\n  [ngClass]=\"classes\"\n  >\n  {{ name }}\n</a>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -371,7 +371,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-menu-item',\n  template: `\n    <a\n      href=\"#\"\n      [ngClass]=\"classes\"\n      >\n      {{ name }}\n    </a>\n  `,\n  styleUrls: ['./menu-item.component.scss']\n})\nexport class MenuItemComponent {\n  /**\n   * Название\n   * \n   * @required\n   */\n  @Input()\n  name: string = 'Пункт меню';\n\n  /**\n   * Активность\n   */\n  @Input()\n  active = false;\n\n  /**\n   * Доступность\n   */\n  @Input()\n  disabled = false;\n  \n  public get classes(): string[] {\n    const active = this.active ? 'menu-item--active' : '';\n    const disabled = this.disabled ? 'menu-item--disabled' : '';\n\n    return ['menu-item', active, disabled];\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-menu-item',\n  template: `\n    <a\n      href=\"javascript:void(0);\"\n      [ngClass]=\"classes\"\n      >\n      {{ name }}\n    </a>\n  `,\n  styleUrls: ['./menu-item.component.scss']\n})\nexport class MenuItemComponent {\n  /**\n   * Название\n   * \n   * @required\n   */\n  @Input()\n  name: string = 'Пункт меню';\n\n  /**\n   * Активность\n   */\n  @Input()\n  active = false;\n\n  /**\n   * Доступность\n   */\n  @Input()\n  disabled = false;\n  \n  public get classes(): string[] {\n    const active = this.active ? 'menu-item--active' : '';\n    const disabled = this.disabled ? 'menu-item--disabled' : '';\n\n    return ['menu-item', active, disabled];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -550,7 +550,7 @@
                 "name": "Base",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Menu.stories.ts",
+                "file": "src/stories/MenuItem.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -558,7 +558,7 @@
                 "name": "Base",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/MenuItem.stories.ts",
+                "file": "src/stories/Menu.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -582,17 +582,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "items",
@@ -693,17 +693,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Menu.stories.ts",
-                "type": "",
-                "defaultValue": "function(args: MenuComponent) {\n  return {\n    component: MenuComponent,\n    props: args\n  }\n}"
+                "file": "src/stories/MenuItem.stories.ts",
+                "type": "Story<MenuItemComponent>",
+                "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args,\n    moduleMetadata: {\n      declarations: [MenuItemComponent],\n    },\n  }\n}"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/MenuItem.stories.ts",
-                "type": "Story<MenuItemComponent>",
-                "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args,\n    moduleMetadata: {\n      declarations: [MenuItemComponent],\n    },\n  }\n}"
+                "file": "src/stories/Menu.stories.ts",
+                "type": "",
+                "defaultValue": "function(args: MenuComponent) {\n  return {\n    component: MenuComponent,\n    props: args\n  }\n}"
             }
         ],
         "functions": [],
@@ -803,16 +803,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -821,6 +811,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
