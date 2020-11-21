@@ -3,10 +3,10 @@
     "interfaces": [
         {
             "name": "City",
-            "id": "interface-City-9c4c2120acdd82cff4d51f8cfea7fe69",
+            "id": "interface-City-5da0f22d1472920841b91fce2497530b",
             "file": "src/app/multi/multi.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {SelectItem} from 'primeng/api';\n\ninterface City {\n  name: string,\n  code: string\n}\n\n@Component({\n  selector: 'app-multi',\n  templateUrl: './multi.template.html',\n  styleUrls: ['./multi.component.scss']\n})\nexport class MultiComponent {\n\n  @Input() cities: SelectItem[]\n\n  selectedCities: City[];\n\n  constructor() {}\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {SelectItem} from 'primeng/api';\n\ninterface City {\n  name: string,\n  code: string\n}\n\n@Component({\n  selector: 'app-multi',\n  templateUrl: './multi.template.html',\n  styleUrls: ['./multi.component.scss']\n})\nexport class MultiComponent {\n\n  @Input() cities: SelectItem[]\n\n  selectedCities: City[];\n\n  constructor() {}\n\n};\n",
             "properties": [
                 {
                     "name": "code",
@@ -421,7 +421,7 @@
         },
         {
             "name": "MultiComponent",
-            "id": "component-MultiComponent-9c4c2120acdd82cff4d51f8cfea7fe69",
+            "id": "component-MultiComponent-5da0f22d1472920841b91fce2497530b",
             "file": "src/app/multi/multi.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -460,7 +460,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {SelectItem} from 'primeng/api';\n\ninterface City {\n  name: string,\n  code: string\n}\n\n@Component({\n  selector: 'app-multi',\n  templateUrl: './multi.template.html',\n  styleUrls: ['./multi.component.scss']\n})\nexport class MultiComponent {\n\n  @Input() cities: SelectItem[]\n\n  selectedCities: City[];\n\n  constructor() {}\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {SelectItem} from 'primeng/api';\n\ninterface City {\n  name: string,\n  code: string\n}\n\n@Component({\n  selector: 'app-multi',\n  templateUrl: './multi.template.html',\n  styleUrls: ['./multi.component.scss']\n})\nexport class MultiComponent {\n\n  @Input() cities: SelectItem[]\n\n  selectedCities: City[];\n\n  constructor() {}\n\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -773,17 +773,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Logo.stories.ts",
-                "type": "Story<LogoComponent>",
-                "defaultValue": "(args: LogoComponent) => ({\n  component: LogoComponent,\n  props: args,\n})"
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "function(args: Button) {\n  return {\n    component: Button,\n    moduleMetadata: {\n      declarations: [Button],\n    },\n    props: args\n  }\n}"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "type": "Story<Button>",
-                "defaultValue": "function(args: Button) {\n  return {\n    component: Button,\n    moduleMetadata: {\n      declarations: [Button],\n    },\n    props: args\n  }\n}"
+                "file": "src/stories/Logo.stories.ts",
+                "type": "Story<LogoComponent>",
+                "defaultValue": "(args: LogoComponent) => ({\n  component: LogoComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
