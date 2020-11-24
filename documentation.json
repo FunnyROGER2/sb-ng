@@ -3,10 +3,10 @@
     "interfaces": [
         {
             "name": "City",
-            "id": "interface-City-5da0f22d1472920841b91fce2497530b",
+            "id": "interface-City-e04b5706ef029ea08347f14d91636424",
             "file": "src/app/multi/multi.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {SelectItem} from 'primeng/api';\n\ninterface City {\n  name: string,\n  code: string\n}\n\n@Component({\n  selector: 'app-multi',\n  templateUrl: './multi.template.html',\n  styleUrls: ['./multi.component.scss']\n})\nexport class MultiComponent {\n\n  @Input() cities: SelectItem[]\n\n  selectedCities: City[];\n\n  constructor() {}\n\n};\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport {SelectItem} from 'primeng/api';\r\n\r\ninterface City {\r\n  name: string,\r\n  code: string\r\n}\r\n\r\n@Component({\r\n  selector: 'app-multi',\r\n  templateUrl: './multi.template.html',\r\n  styleUrls: ['./multi.component.scss']\r\n})\r\nexport class MultiComponent {\r\n\r\n  @Input() cities: SelectItem[]\r\n\r\n  selectedCities: City[];\r\n\r\n  constructor() {}\r\n\r\n};\r\n",
             "properties": [
                 {
                     "name": "code",
@@ -346,7 +346,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".menu {\n    display: flex;\n    border: 2px solid white;\n    border-radius: 4px;\n    padding: 10px;\n    margin: 0;\n\n    @media screen and (max-width: 540px) {\n        flex-direction: column;\n    }\n\n    &__item {\n        margin-left: 10px;\n        list-style-type: none;\n\n        @media screen and (max-width: 540px) {\n            margin-left: 0;\n            margin-top: 10px;\n        }\n    }\n}",
+                    "data": ".menu {\r\n    display: flex;\r\n    border: 2px solid white;\r\n    border-radius: 4px;\r\n    padding: 10px;\r\n    margin: 0;\r\n\r\n    @media screen and (max-width: 540px) {\r\n        flex-direction: column;\r\n    }\r\n\r\n    &__item {\r\n        margin-left: 10px;\r\n        list-style-type: none;\r\n\r\n        @media screen and (max-width: 540px) {\r\n            margin-left: 0;\r\n            margin-top: 10px;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./menu.component.scss"
                 }
             ],
@@ -402,7 +402,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".menu-item {\n    font-family: sans-serif;\n    color: var(--color-text);\n    text-decoration: none;\n    border-bottom: 1px dashed currentColor;\n\n    &:focus,\n    &:hover:not(&--disabled) {\n        border-bottom: none;\n    }\n\n    &--active {\n        font-weight: bold;\n    }\n\n    &--disabled {\n        opacity: .5;\n        cursor: not-allowed\n    }\n}",
+                    "data": ".menu-item {\r\n    font-family: sans-serif;\r\n    color: var(--color-text);\r\n    text-decoration: none;\r\n    border-bottom: 1px dashed currentColor;\r\n\r\n    &:focus,\r\n    &:hover:not(&--disabled) {\r\n        border-bottom: none;\r\n    }\r\n\r\n    &--active {\r\n        font-weight: bold;\r\n    }\r\n\r\n    &--disabled {\r\n        opacity: .5;\r\n        cursor: not-allowed\r\n    }\r\n}",
                     "styleUrl": "./menu-item.component.scss"
                 }
             ],
@@ -421,7 +421,7 @@
         },
         {
             "name": "MultiComponent",
-            "id": "component-MultiComponent-5da0f22d1472920841b91fce2497530b",
+            "id": "component-MultiComponent-e04b5706ef029ea08347f14d91636424",
             "file": "src/app/multi/multi.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -460,7 +460,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {SelectItem} from 'primeng/api';\n\ninterface City {\n  name: string,\n  code: string\n}\n\n@Component({\n  selector: 'app-multi',\n  templateUrl: './multi.template.html',\n  styleUrls: ['./multi.component.scss']\n})\nexport class MultiComponent {\n\n  @Input() cities: SelectItem[]\n\n  selectedCities: City[];\n\n  constructor() {}\n\n};\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport {SelectItem} from 'primeng/api';\r\n\r\ninterface City {\r\n  name: string,\r\n  code: string\r\n}\r\n\r\n@Component({\r\n  selector: 'app-multi',\r\n  templateUrl: './multi.template.html',\r\n  styleUrls: ['./multi.component.scss']\r\n})\r\nexport class MultiComponent {\r\n\r\n  @Input() cities: SelectItem[]\r\n\r\n  selectedCities: City[];\r\n\r\n  constructor() {}\r\n\r\n};\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -638,7 +638,7 @@
                 "name": "Base",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/MenuItem.stories.ts",
+                "file": "src/stories/Menu.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -646,7 +646,7 @@
                 "name": "Base",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Menu.stories.ts",
+                "file": "src/stories/MenuItem.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -789,17 +789,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/MenuItem.stories.ts",
-                "type": "Story<MenuItemComponent>",
-                "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args,\n    moduleMetadata: {\n      declarations: [MenuItemComponent],\n    },\n  }\n}"
+                "file": "src/stories/Menu.stories.ts",
+                "type": "",
+                "defaultValue": "function(args: MenuComponent) {\n  return {\n    component: MenuComponent,\n    props: args\n  }\n}"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Menu.stories.ts",
-                "type": "",
-                "defaultValue": "function(args: MenuComponent) {\n  return {\n    component: MenuComponent,\n    props: args\n  }\n}"
+                "file": "src/stories/MenuItem.stories.ts",
+                "type": "Story<MenuItemComponent>",
+                "defaultValue": "function(args: MenuItemComponent) {\n  return {\n    component: MenuItemComponent,\n    props: args,\n    moduleMetadata: {\n      declarations: [MenuItemComponent],\n    },\n  }\n}"
             },
             {
                 "name": "Template",

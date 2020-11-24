@@ -28,6 +28,10 @@ export default {
 const Template: Story<MultiComponent> = (args: MultiComponent) => ({
   component: MultiComponent,
   props: args,
+  template: `<app-multi
+    [cities]='cities'
+  >
+  </app-multi>`,
 });
 
 export const Pair = Template.bind({});

@@ -29,6 +29,11 @@ export default {
 const Template: Story<LogoComponent> = (args: LogoComponent) => ({
   component: LogoComponent,
   props: args,
+  template: `<app-logo
+    [name]='name'
+    [width]='width'
+  >
+  </app-logo>`,
 });
 
 export const Pic = Template.bind({});

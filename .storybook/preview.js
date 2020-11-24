@@ -57,24 +57,10 @@ export const parameters = {
   },
 };
 
-function getBindings(props) {
-  return Object.entries(props).map(([key, value]) => {
-    let binding = '';
-    if (typeof value === 'function') {
-      binding = `(${key})="${key}($event)"`
-    } else {
-      binding = `[${key}]="${key}"`
-    }
-
-    return binding;
-  }).join(' ')
-}
-
 export const decorators = [
   (storyFunc, context) => {
     const story = storyFunc();
-    const { component, props } = story;
-    const selector = component.__annotations__[0].selector;
+    const { component } = story;
     const declarations = story.moduleMetadata ? [...story.moduleMetadata.declarations] : [];
 
     return {
@@ -86,7 +72,7 @@ export const decorators = [
           component
         ]
       },
-      template: `<div class="theme theme--${context.globals.theme}"><${selector} ${getBindings(props)}></${selector}></div>`
+      template: `<div class="theme theme--${context.globals.theme}">${story.template}</div>`
     };
   },
 ];

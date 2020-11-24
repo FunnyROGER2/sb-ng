@@ -16,7 +16,14 @@ const Template: Story<Button> = function(args: Button) {
     moduleMetadata: {
       declarations: [Button],
     },
-    props: args
+    props: args,
+    template: `<app-button
+      [size]='size'
+      [label]='label'
+      [backgroundColor]='backgroundColor'
+      [primary]='primary'
+    >
+    </app-button>`,
   }
 };
 
